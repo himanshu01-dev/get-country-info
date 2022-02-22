@@ -1,10 +1,12 @@
+import React from "react";
+import SearchWall from './Components/SearchWall/SearchWall'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-     Hello World
-    </div>
+    <>
+    <SearchWall />
+    </>
   );
 }
 

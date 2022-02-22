@@ -1,0 +1,16 @@
+.menu_ul {
+  padding: 1em;
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+
+.menu_ul li a {
+  font-size: 1em;
+  margin-right: 1.3em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: #ccc7c7dc;
+}

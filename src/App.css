@@ -1,38 +1,49 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Google Fonts  */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap");
+/* font-family: 'Roboto', sans-serif; */
+
+.underlineEff {
+  position: relative;
+  height: 0.125em;
+  padding-bottom: 0.15em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.underlineEff::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #07479b;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+  padding: 0.6px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.underlineEff:hover::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
 }
 
-.App-link {
-  color: #61dafb;
+::selection {
+  background-color: #07479b;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body::-webkit-scrollbar {
+  width: 0.0001em;
+  background-color: #d1d7e1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #07479b;
+  border-radius: 2px;
 }
