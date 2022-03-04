@@ -6,11 +6,16 @@
 }
 
 .menu_ul li a {
-  font-size: 1em;
+  font-size: 1.1em;
   margin-right: 1.3em;
   text-transform: uppercase;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
   text-decoration: none;
-  color: #ccc7c7dc;
+  color: #292c6d;
+}
+
+.menu_ul li a:hover {
+  transition: all 400ms ease-in-out;
+  color: #292c6da2;
 }
