@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import './Searchbox.css';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+import './Searchbox.css';
 
 const Seachbox = () => {
     const [currentBtnIcon, setCurrentBtnIcon] = useState(<SearchIcon />);
@@ -31,25 +30,34 @@ const Seachbox = () => {
         setSearchDataStr('');
     }
 
+    const SELECT_ONCHANGE_HANDLER = (e) => {
+        console.log(e.target.value)
+    }
+
     return (
         <section className='section-search'>
-            <select>
-                <option value="">Name</option>
-                <option value="">Code</option>
-                <option value="">Currency</option>
-                <option value="">Lang</option>
-                <option value="">Capital</option>
-                <option value="">Region</option>
+
+            <select className='select' onChange={SELECT_ONCHANGE_HANDLER}>
+                <option className='select-option' value="name">Name</option>
+                <option className='select-option' value="code">Code</option>
+                <option className='select-option' value="curr">Currency</option>
+                <option className='select-option' value="lang">Lang</option>
+                <option className='select-option' value="captial">Capital</option>
+                <option className='select-option' value="reg">Region</option>
             </select>
 
             <div className="vertical_line"></div>
 
             <input type="search" placeholder='Search'
-                id="input-search"
+                spellCheck="false" id="input-search"
                 onChange={ONCHANGE_HANDLER} onKeyUp={ONKEYUP_HANDLER}
                 value={searchDataStr} />
 
-            <button className='search-btn shineEff' onClick={SEARCHBTN_ONCLICK_HANDLER}>{currentBtnIcon}</button>
+            <button className='search-btn shineEff'
+                onClick={SEARCHBTN_ONCLICK_HANDLER}>
+                {currentBtnIcon}
+            </button>
+
         </section>
     )
 }
