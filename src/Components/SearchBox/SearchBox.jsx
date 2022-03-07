@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
-import './Searchbox.css';
+import './SearchBox.css';
 
-const Seachbox = () => {
+const Searchbox = (props) => {
     const [currentBtnIcon, setCurrentBtnIcon] = useState(<SearchIcon />);
     const [searchDataStr, setSearchDataStr] = useState('');
+    const [searchDataType, setSearchDataType] = useState('/name/')
 
     //WHEN ENTER KEY IS PRESSED ⌨!
     const ONKEYUP_HANDLER = (e) => {
         if (e.code === 'Enter' && e.keyCode === 13) {
-            // WRITE STUFF TO SEARCH 'STRING' ON DATA
-            console.log("searching....")
+            // PASSING DATA TO WALL.jsx
+            props.data({ type: searchDataType, str: searchDataStr });
         }
     }
 
@@ -31,19 +32,20 @@ const Seachbox = () => {
     }
 
     const SELECT_ONCHANGE_HANDLER = (e) => {
-        console.log(e.target.value)
+        setSearchDataType(e.target.value)
+        // console.log(searchDataType);
     }
 
     return (
         <section className='section-search'>
 
             <select className='select' onChange={SELECT_ONCHANGE_HANDLER}>
-                <option className='select-option' value="name">Name</option>
-                <option className='select-option' value="code">Code</option>
-                <option className='select-option' value="curr">Currency</option>
-                <option className='select-option' value="lang">Lang</option>
-                <option className='select-option' value="captial">Capital</option>
-                <option className='select-option' value="reg">Region</option>
+                <option className='select-option' value="/name/">Name</option>
+                <option className='select-option' value="/alpha/">Code</option>
+                <option className='select-option' value="/currency/">Currency</option>
+                <option className='select-option' value="/lang/">Lang</option>
+                <option className='select-option' value="/capital/">Capital</option>
+                <option className='select-option' value="/region/">Region</option>
             </select>
 
             <div className="vertical_line"></div>
@@ -62,4 +64,4 @@ const Seachbox = () => {
     )
 }
 
-export default Seachbox
+export default Searchbox;

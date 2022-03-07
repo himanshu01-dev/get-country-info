@@ -12,7 +12,7 @@ input[type="search"]::-webkit-search-results-decoration {
   align-items: center;
 }
 
-.section-search .select {
+.section-search select {
   box-shadow: 0px 0px 100px #ced5df;
   font-size: 1.3em;
   padding: 0.73em 1.3em;
@@ -22,10 +22,10 @@ input[type="search"]::-webkit-search-results-decoration {
   color: rgb(211, 211, 211);
 }
 
-.section-search .select .select-option {
-  background-color: rgba(255, 255, 255, 0.664);
-  color: #000;
-  border: none;
+.section-search select option {
+  color: rgba(34, 34, 34, 0.76);
+  filter: blur(4px);
+  outline: none;
 }
 
 .vertical_line {
