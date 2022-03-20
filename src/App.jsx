@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import Wall from './Components/Wall/Wall'
-import './App.css';
+import './App.css'
 
 function App() {
   return (
     <React.StrictMode>
-      <Wall />
+<Wall/>
     </React.StrictMode>
-  );
+  )
 }
 
-export default App;
+export default App
