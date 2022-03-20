@@ -8,7 +8,7 @@ import "./Wall.css";
 
 const baseURL = 'https://restcountries.com/v3.1';
 
-const SearchWall = () => {
+const Wall = () => {
 
     const [currentData, setCurrentData] = useState('')
 
@@ -27,11 +27,11 @@ const SearchWall = () => {
             <Menu />
             <Searchbox data={DATA_FROM_SEARCHBOX} />
 
-            {currentData.forEach(element => {
-                // CONTINUE FROM HERE 
-             })}
+            {/* {currentData.forEach(element => {
+                CONTINUE FROM HERE 
+             })} */}
         </section>
     )
 }
 
-export default SearchWall;
+export default Wall;
